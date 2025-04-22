@@ -1,3 +1,5 @@
+/* --- START OF FILE style.css --- */
+
 html, body {
     margin: 0;
     padding: 0;
@@ -9,6 +11,7 @@ html, body {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    font-family: sans-serif; /* Basic font for indicators */
 }
 
 *, *:before, *:after {
@@ -21,18 +24,37 @@ html, body {
     /* Width and Height attributes set by JS */
 }
 
-/* Removed styles for .snake-segment and .food divs */
-
-/* Style for AI status indicator (Optional) */
-.ai-indicator {
+/* Base style for all indicators */
+.indicator {
     position: fixed;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #eee;
+    padding: 5px 10px;
+    /* --- FIX: Revert font size --- */
+    font-size: 0.8em; /* Restored original size */
+    border-radius: 4px;
+    z-index: 20;
+    display: none; /* Initially hidden until updated by JS */
+    white-space: nowrap; /* Prevent line breaks */
+}
+
+/* A* AI Indicator Position (Top-Left) */
+.a-star-indicator {
     top: 10px;
     left: 10px;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    padding: 5px 10px;
-    font-family: sans-serif;
-    font-size: 0.8em;
-    border-radius: 3px;
-    z-index: 20;
 }
+
+/* Longest Path AI Indicator Position (Below A*) */
+.longest-path-indicator {
+    top: 35px; /* Adjusted spacing slightly for 0.8em font */
+    left: 10px;
+}
+
+/* Score Indicator Position (Top-Right) */
+.score-indicator {
+    top: 10px;
+    right: 10px;
+}
+
+/* Removed styles for .snake-segment and .food divs */
+/* --- END OF FILE style.css --- */
