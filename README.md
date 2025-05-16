@@ -1,4 +1,4 @@
-# Snake Game with A* Pathfinding AI
+# Snake-AI
 
 This project is a classic Snake game implemented in JavaScript using the p5.js library for graphics and interaction. The primary focus of this version is to demonstrate the A* (A-star) pathfinding algorithm in action, with the snake's movement being controlled by an AI that uses A* to navigate.
 
@@ -45,14 +45,3 @@ The `AStar.js` module provides:
 *   `GridNode` objects representing cells in the game grid, storing A\* properties (`f`, `g`, `h`, `parent`, `visited`, `closed`, `weight`).
 *   A `Graph` class that converts the game state (snake body as walls) into a traversable graph for the A\* algorithm.
 *   The `astar.search` function, which performs the pathfinding using Manhattan distance as the heuristic.
-
-## Future Considerations (Beyond Current Scope)
-
-*   More advanced AI strategies (e.g., Hamiltonian cycles for guaranteed survival, look-ahead for trap avoidance).
-*   Deeper A\* visualization: drawing open/closed sets, displaying f/g/h costs on grid cells.
-*   Step-by-step A\* execution for educational purposes.
-
-## Acknowledgements
-
-*   Based on the A\* algorithm concepts.
-*   Uses the p5.js creative coding library.
