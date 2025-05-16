@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- External CSS Libraries (Potentially needed only for hamburger icon) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.0/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.1.7/css/fork-awesome.min.css"
+          integrity="sha256-gsmEoJAws/Kd3CjuOQzLie5Q3yshhvmo7YNtBG7aaEY=" crossorigin="anonymous">
+
+    <!-- Link to local stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Snake AI</title>
+
+</head>
+<body>
+<div class="navBar">
+    <button class="hamburgerButton">
+        <i class="fa fa-bars" style="font-size:24px;color:white"></i>
+    </button>
+</div>
+
+<!-- p5.js Libraries via CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js" integrity="sha512-d6sc8kbZEtA2LwB9m/ck0FhvyUwVfdmvTeyJRprmj7Wg9wRFtHDIpr6qk4g/y3Ix3O9I6KHIv6SGu9f7RaP1Gw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/addons/p5.sound.min.js" integrity="sha512-WzkwpdWEMAY/W8WvP9KS2/VI6zkgejR4/KTxTl4qHx0utqeyVE0JY+S1DlMuxDChC7x0oXtk/ESji6a0lP/Tdg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+    let hamburgerClicked = false;
+
+    function setupElements() {
+        hamburgerClicked = false; 
+        try {
+            const hamburgerButton = select('button.hamburgerButton'); 
+            if (hamburgerButton) {
+                hamburgerButton.touchStarted(clickedHamburger);
+            } else {
+                 console.warn("Hamburger button not found during setupElements.");
+            }
+
+            const bodyElement = select("body"); 
+            if (bodyElement) {
+                bodyElement.touchStarted(clickedBody);
+            } else {
+                console.warn("Body element not found during setupElements.");
+            }
+        } catch (e) {
+            console.error("Error in setupElements:", e);
+        }
+    }
+
+    function clickedBody() {
+        if (!hamburgerClicked) {
+            // Potential logic for body click
+        }
+        hamburgerClicked = false; 
+    }
+
+    function clickedHamburger() {
+        hamburgerClicked = true; 
+        // Potential logic for hamburger click
+        // console.log("Hamburger clicked!");
+    }
+    
+    // p5.js calls windowResized in sketch.js automatically
+    // function handleWindowResize() { } 
+</script>
+
+<!-- Your Snake Game Script Includes -->
+<script src="SnakeGame/AStar.js"></script> <!-- Added AStar.js -->
+<script src="SnakeGame/sketch.js"></script>
+<script src="SnakeGame/Snake.js"></script>
+<script src="SnakeGame/Apple.js"></script>
+<!-- <script src="SnakeGame/HamiltonianCycle.js"></script> --> <!-- Removed HamiltonianCycle.js -->
+
+</body>
+</html>
