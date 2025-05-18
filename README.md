@@ -42,30 +42,6 @@ The AI's strategy is twofold:
     *   A crucial constraint in the A* search is the `overTakesTail` check. This function ensures that any proposed shortcut path doesn't lead the snake's head to a position on the cycle that is "behind" its tail (considering the snake's length and the cyclical nature of the path). This prevents the snake from cutting off its own path of retreat along the cycle.
     *   The path found by A* allows the snake to deviate from strictly following the cycle sequence, taking a more direct route to the apple. After consuming the apple, it recalculates its path.
 
-## Project Files
-
-*   `index.html`: The main HTML file that sets up the webpage, loads p5.js, and includes the game scripts.
-*   `sketch.js`: The core p5.js sketch. It handles:
-    *   Canvas setup and window resizing.
-    *   Game loop (`draw()`).
-    *   Initialization of the `Snake` and `HamiltonianCycle` objects.
-    *   User input handling (keyboard controls for speed and overlay).
-    *   Drawing the game elements and UI.
-*   `Snake.js`: Defines the `Snake` class, which manages:
-    *   The snake's position, body segments, and movement.
-    *   AI logic: `calculatePath()` which calls `getPathBasedOnAStar()`.
-    *   Collision detection (with self and walls).
-    *   Apple consumption and growth (`ateApple()`).
-    *   Interaction with the `HamiltonianCycle` for movement decisions (`getNextPosition()`).
-*   `Apple.js`: Defines the `Apple` class, responsible for:
-    *   Its position on the grid (ensuring it doesn't spawn on the snake).
-    *   Rendering itself.
-*   `HamiltonianCycle.js`: Defines the `HamiltonianCycle` class. It handles:
-    *   Generation of the Hamiltonian cycle on the grid using a spanning tree-based algorithm.
-    *   Storing the cycle as a sequence of nodes (`HNode`).
-    *   Providing utility functions like `getNodeNo()` (get node index from coordinates) and `getPossiblePositionsFrom()` (get adjacent cycle nodes).
-    *   The `HPath` class is also defined here, used by A* to represent and manage paths.
-*   `styles.css`: Contains basic CSS for the page layout.
 
 ## Setup and Installation
 
