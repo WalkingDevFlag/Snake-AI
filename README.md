@@ -68,12 +68,6 @@ The AI's strategy is twofold:
 *   **`Down Arrow` Key:** Decreases the AI's speed (by decreasing the game's frame rate).
 *   **`Space Bar`:** Press and **hold** to significantly speed up the AI (by increasing the number of snake updates per frame). Release to return to the speed set by arrow keys/default.
 
-## Technologies Used
-
-*   **JavaScript (ES6+)**
-*   **p5.js:** A JavaScript library for creative coding, used here for graphics, canvas management, and event handling.
-*   **HTML5**
-*   **CSS3**
 
 ## Acknowledgements
 
